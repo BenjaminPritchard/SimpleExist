@@ -9,9 +9,9 @@ GoogleAppEngine\
 Tamper Monkey\    
 WikiCompare\
 
-The first directory contains python flask code for the backend, which is designed to be hosted through Google App Engine
-The second directory contains the .js for tamper monkey to insert the link into every wikipedia page
-The third contains a standalone version of wikicompare.html, which can be used to just compare 
+The first directory contains python flask code for the backend, which is designed to be hosted through Google App Engine  
+The second directory contains the .js for tamper monkey to insert the link into every wikipedia page  
+The third contains a standalone version of wikicompare.html, which can be used to just compare  
 
 # About
 
