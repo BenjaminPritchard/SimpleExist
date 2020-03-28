@@ -1,0 +1,81 @@
+<html>
+<style>
+    html,body{
+        width: 99%;
+        height: 90%;
+    }
+</style>
+
+<script>
+
+    function SetupInitialFrame() {
+
+        //var urlParams = new URLSearchParams(window.location.search);
+        
+        // if we were invoked with a query parameter, defualt to using it...
+        // this is so we can link to this page like this:
+        //   wikicompare.html&q=math
+        //subject = urlParams.get('q');
+
+        // this will be filled in by the template engine in flask...
+        subject = '{{searchWord}}';
+
+        // otherwise just default to showing them something hard, so they can appreciate the
+        // simplicity of the simple.wikipedia article
+        if (subject == null) subject = 'Quantum Mechanics';
+
+        SetupFrames(subject);
+
+        // default to populating the textbox with whatever search text we are using...
+        document.getElementById("SearchText").value = subject; 
+    
+    }
+
+	function SetupFrames(theText) {
+
+        if (theText == '')
+            searchText = document.getElementById("SearchText").value;
+        else    
+            searchText = theText;
+        
+		frame1 = document.getElementById("frame1");
+        frame1.src="https://simple.wikipedia.org/w/index.php?title=" + searchText + '&printable=yes';
+
+        frame2 = document.getElementById("frame2");
+        frame2.src="https://en.wikipedia.org/w/index.php?title=" + searchText + '&printable=yes';
+	}
+
+    function zoomLeft() {
+        searchText = document.getElementById("SearchText").value;
+        window.location.href = "https://simple.wikipedia.org/w/index.php?title=" + searchText;
+    }
+    
+    
+    function zoomRight() {
+        searchText = document.getElementById("SearchText").value;
+        window.location.href = "https://en.wikipedia.org/w/index.php?title=" + searchText;
+    }
+    
+    
+
+</script>
+        
+<body onload="SetupInitialFrame();">
+This webpage will compare <b>simple.wikipedia.org</b> and <b>en.wikipedia.org</b> article side by side using iframes. This page was created as part of a
+<a href="https://www.benjaminpritchard.org/form-follows-function/">blog post</a> on minimalistic programming.
+<p></p>
+<input type="text" id="SearchText" value="">
+<button onclick="SetupFrames('');">Compare</button>
+<button style="float: right; margin:3px" onclick="zoomRight();">Zoom Right</button>
+<button style="float: right; margin:3px" onclick="zoomLeft();">Zoom Left</button>
+<p></p>
+
+<iframe onload="" id='frame1' src="" frameborder="0" scrolling="yes" style="height: 100%; width: 49%; float: left; " height="100%" width="49%" align="left">
+</iframe>  
+
+<iframe onload="" id='frame2' src="" frameborder="0" scrolling="yes" style="overflow: hidden; height: 100%; width: 49%; " height="100%" width="49%" align="right"> 
+</iframe>
+
+
+</body>
+</html>
