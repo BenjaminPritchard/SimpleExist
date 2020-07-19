@@ -1,7 +1,6 @@
 # Simple Wiki Exists
 
-This repository contains the source code to a tamper monkey script to create a link from an en.wikipedia page to the corresponding simple.wikipedia page, using colors to indicate if 
-the page exists.
+This repository contains the source code to a tamper monkey script to create a link from an en.wikipedia page to the corresponding simple.wikipedia page, while letting people know if the simple page exists yet or not.
 
 Things are organized into 3 directories:
 
@@ -20,5 +19,10 @@ The code in this repository was developed as a part of a series of tutorial-styl
 * https://www.benjaminpritchard.org/form-follows-function/
 * https://www.benjaminpritchard.org/creating-and-consuming-a-simple-rest-api/
 
+# History
+
+* 17-March-2020 : 1.0 - Initial Release
+* 19-July2020   : 1.1 - Fixed problems with spaces in article names (by replacing them with an underscore)    
+
 Benjamin Pritchard / Kundalini Software  
-37-March-2020
+
